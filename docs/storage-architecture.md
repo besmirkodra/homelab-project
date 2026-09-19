@@ -25,6 +25,8 @@ The Nextcloud container accesses high-capacity storage on the host via the `mp0`
 ```conf
 # Mount point format: mp[N]: /host/path,mp=/container/path
 mp0: /mnt/pve/Windows_Mirror/nextcloud_data,mp=/mnt/nextcloud_data
+```
+
 Storage Permissions & User Mapping
 Host Path: /mnt/pve/Windows_Mirror/nextcloud_data
 
@@ -38,7 +40,7 @@ For hardware-accelerated video encoding and decoding (e.g., Intel Quick Sync / V
 Device Node Mapping
 The following host devices are mapped in the container configuration file (/etc/pve/lxc/100.conf / 101.conf):
 
-Code snippet
+```conf
 # Render Nodes
 dev0: /dev/dri/renderD128,gid=992
 dev1: /dev/dri/renderD129,gid=992
@@ -46,6 +48,7 @@ dev1: /dev/dri/renderD129,gid=992
 # Display Cards
 dev2: /dev/dri/card0,gid=44
 dev3: /dev/dri/card1,gid=44
+```
 Driver & Group Permissions
 Video & Render Groups: Device permissions are assigned to group IDs 44 (video) and 992 (render) on the host.
 
@@ -54,12 +57,14 @@ Container Access: By explicitly granting access via gid=992 and gid=44, media se
 Serial Device Passthrough
 In addition to GPU nodes, character devices for serial communication (e.g., Zigbee/Z-Wave automation dongles or peripheral devices) are passed into LXCs using cgroup v2 rules and LXC mount entries:
 
-Code snippet
+```conf
 # Enable device cgroup rules for character devices
 lxc.cgroup2.devices.allow: c 188:* rwm
 lxc.cgroup2.devices.allow: c 189:* rwm
+
 
 # Bind serial devices
 lxc.mount.entry: /dev/serial/by-id dev/serial/by-id none bind,optional,create=dir
 lxc.mount.entry: /dev/ttyUSB0 dev/ttyUSB0 none bind,optional,create=file
 lxc.mount.entry: /dev/ttyACM0 dev/ttyACM0 none bind,optional,create=file
+```
