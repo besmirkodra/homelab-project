@@ -1,0 +1,17 @@
+# Proxmox / System secrets
+*.key
+*.pem
+*.pfx
+*.env
+*.secret
+
+# Prevent committing raw un-sanitized files
+*.raw
+*.bak
+config.local.json
+
+# Temp files and OS noise
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
