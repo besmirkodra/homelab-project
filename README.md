@@ -48,20 +48,15 @@ flowchart TB
     %% Cross-site Monitoring Connections
     AL_CT101 -.->|Telemetry & Health Checks| DE_HOST
     AL_CT101 -.->|Agent / ICMP Checks| DE_CONTAINERS
+nfrastructure Overview
+German Node (srv): Primary hosting node in Germany for media streaming, Nextcloud file management, torrenting, and local web development workloads.
 
----
+Albanian Node (rmb): Edge service node in Albania running a dedicated Tailscale Exit Node and Checkmk infrastructure monitoring instance.
 
-## Infrastructure Overview
+Inter-Site Connectivity: Encrypted Tailscale mesh overlay interconnecting isolated local subnets across international sites.
 
-* **German Node (`srv`):** Primary hosting node in Germany for media streaming, Nextcloud file management, torrenting, and local web development workloads.
-* **Albanian Node (`rmb`):** Edge service node in Albania running a dedicated Tailscale Exit Node and Checkmk infrastructure monitoring instance.
-* **Inter-Site Connectivity:** Encrypted Tailscale mesh overlay interconnecting isolated local subnets across international sites.
-
----
-
-## Repository Structure
-
-```text
+Repository Structure
+Plaintext
 ├── docs/
 │   ├── network-topology.md      # Tailscale mesh routing and subnet breakdown
 │   ├── checkmk-monitoring.md    # Cross-site telemetry and agent configuration
