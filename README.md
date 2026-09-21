@@ -48,15 +48,20 @@ flowchart TB
     %% Cross-site Monitoring Connections
     AL_CT101 -.->|Telemetry & Health Checks| DE_HOST
     AL_CT101 -.->|Agent / ICMP Checks| DE_CONTAINERS
-nfrastructure Overview
-German Node (srv): Primary hosting node in Germany for media streaming, Nextcloud file management, torrenting, and local web development workloads.
+```
+---
 
-Albanian Node (rmb): Edge service node in Albania running a dedicated Tailscale Exit Node and Checkmk infrastructure monitoring instance.
+## Infrastructure Overview
 
-Inter-Site Connectivity: Encrypted Tailscale mesh overlay interconnecting isolated local subnets across international sites.
+* **German Node (`srv`):** Primary hosting node in Germany for media streaming, Nextcloud file management, torrenting, and local web development workloads.
+* **Albanian Node (`rmb`):** Edge service node in Albania running a dedicated Tailscale Exit Node and Checkmk infrastructure monitoring instance.
+* **Inter-Site Connectivity:** Encrypted Tailscale mesh overlay interconnecting isolated local subnets across international sites.
 
-Repository Structure
-Plaintext
+---
+
+## Repository Structure
+
+```text
 ├── docs/
 │   ├── network-topology.md      # Tailscale mesh routing and subnet breakdown
 │   ├── checkmk-monitoring.md    # Cross-site telemetry and agent configuration
@@ -66,9 +71,12 @@ Plaintext
 │   └── albanian-node-rmb/configs/# LXC container configuration templates (100–101)
 ├── tailscale/                   # Mesh routing policies and ACL definitions
 └── scripts/                     # Infrastructure maintenance and backup scripts
-Documentation Quick Links
-Network Topology & Routing Architecture
+```
 
-Checkmk Infrastructure Monitoring Setup
+---
 
-Storage Layout & Hardware Passthrough
+## Documentation Quick Links
+
+* [Network Topology & Routing Architecture](docs/network-topology.md)
+* [Checkmk Infrastructure Monitoring Setup](docs/checkmk-monitoring.md)
+* [Storage Layout & Hardware Passthrough](docs/storage-architecture.md)
