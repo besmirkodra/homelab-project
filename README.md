@@ -1,6 +1,13 @@
-# Multi-Site Dual-Node Proxmox Home Lab Infrastructure
+# 🖥️ Multi-Site Home Lab Infrastructure
 
-Architectural documentation, container configurations, and network topologies for a distributed multi-site Proxmox VE environment spanning Germany and Albania.
+[![Proxmox VE](https://img.shields.io/badge/Hypervisor-Proxmox%20VE-E57008?style=flat&logo=proxmox&logoColor=white)](https://www.proxmox.com/)
+[![Tailscale](https://img.shields.io/badge/Networking-Tailscale%20Mesh%20VPN-242424?style=flat&logo=tailscale&logoColor=white)](https://tailscale.com/)
+[![Linux Containers](https://img.shields.io/badge/Virtualization-LXC%20%2F%20Docker-2496ED?style=flat&logo=docker&logoColor=white)](https://linuxcontainers.org/)
+[![Debian](https://img.shields.io/badge/OS-Debian%20%2F%20Ubuntu-A81D33?style=flat&logo=debian&logoColor=white)](https://www.debian.org/)
+[![GitHub](https://img.shields.io/badge/Repository-besmirkodra%2Fhomelab--project-181717?style=flat&logo=github)](https://github.com/besmirkodra/homelab-project)
+
+A documented, self-hosted multi-site infrastructure topology featuring virtualized nodes, LXC containers, secure cross-site mesh networking, self-hosted media and storage services, and local DNS ad-blocking, spanning Germany and Albania..
+
 
 ---
 
